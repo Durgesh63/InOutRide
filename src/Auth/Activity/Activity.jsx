@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Text, ScrollView, Image, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/Ionicons';
-import Header from '../Header/Header';
+import Header from '../Components/Header/Header';
 import { styled } from 'nativewind';
 import TripHistoryCard from './History/TripHistoryCard';
 

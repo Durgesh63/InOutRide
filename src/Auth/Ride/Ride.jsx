@@ -3,8 +3,8 @@ import React from 'react';
 import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { styled } from 'nativewind';
-import Carousel from '../Carousel/Carousel';
-import Header from '../Header/Header';
+import Carousel from '../Components/Carousel/Carousel';
+import Header from '../Components/Header/Header';
 
 export default function Ride() {
   return (
@@ -13,12 +13,6 @@ export default function Ride() {
 
       <Header />
 
-      {/* <View className="items-center mt-4 mx-1 h-[30%] px-1">
-        <Image
-          source={{ uri: 'https://via.placeholder.com/150x150' }} // Replace with actual bus image URI
-          className="w-full h-full rounded-lg"
-        />
-      </View> */}
 
       <Carousel />
 

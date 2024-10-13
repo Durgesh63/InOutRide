@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text, ScrollView } from 'react-native';
 import { styled } from 'nativewind';
-import Header from '../Header/Header';
+import Header from '../Components/Header/Header';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import HistoryCard from './History/HistoryCard';
 

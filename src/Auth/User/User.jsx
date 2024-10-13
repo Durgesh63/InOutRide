@@ -3,9 +3,20 @@ import React from 'react';
 import { View, Text, TextInput, TouchableOpacity, Image, ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { styled } from 'nativewind';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useNavigation } from '@react-navigation/native';
+import { useDispatch } from 'react-redux';
+import { Logout } from '../../Redux/Action/Auth.Action';
 
 export default function User() {
 
+  const navigation = useNavigation();
+  const dispatch = useDispatch();
+  async function logOut(params) {
+    await AsyncStorage.removeItem('userToken');
+    dispatch(Logout(null));
+    navigation.navigate('Login');
+  }
   return (
     <ScrollView>
 
@@ -105,7 +116,9 @@ export default function User() {
               <Icon name="chevron-forward-outline" size={24} color="gray" />
             </TouchableOpacity>
 
-            <TouchableOpacity className="flex-row items-center justify-between p-4">
+            <TouchableOpacity className="flex-row items-center justify-between p-4" onPress={() => {
+              logOut();
+            }}>
               <View className="flex-row items-center">
                 <Icon name="log-out-outline" size={24} color="black" />
                 <Text className="ml-4 text-base font-medium">Log out</Text>
